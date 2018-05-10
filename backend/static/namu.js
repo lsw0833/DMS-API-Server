@@ -29,7 +29,9 @@ function load_brokers() {
                 d += "<td>"+b.id.slice(0,9)+"</td>";
                 d += "<td>"+b.container_id.slice(0,9)+"</td>";
                 d += "<td>"+b.port+"</td>";
-                d += "<td>"+b.created+"</td>";
+                var create = new Date(b.created);
+                create.setHours(create.getHours()-9);
+                d += "<td>"+create.toString()+"</td>";
                 d += "<td>"+b.clients+"</td>";
                 d += "<td>"+b.cpu+"</td>";
                 d += "<td>"+b.network_in+"</td>";
