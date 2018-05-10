@@ -65,7 +65,9 @@ function load_client() {
                 var d ="<tr>";
                 d += "<td>"+c.client_mqtt_id+"</td>";
                 d += "<td>"+c.brokers_id.slice(0,9)+"</td>";
-                d += "<td>"+c.last_connected+"</td></tr>";
+                //d += "<td>"+c.last_connected+"</td></tr>";
+                var time = new Date(c.last_connected);
+                d+= "<td>"+time.toString()+"</td></tr>";
                 content += d;
             }
 
