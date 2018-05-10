@@ -8,6 +8,7 @@ from backend.model.resources import Setting
 from flask import jsonify, request
 import time
 import subprocess
+from datetime import timedelta
 
 @app.teardown_appcontext
 def shutdown_session(exception=None):

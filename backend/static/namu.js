@@ -34,7 +34,16 @@ function load_brokers() {
                 d += "<td>"+b.cpu+"</td>";
                 d += "<td>"+b.network_in+"</td>";
                 d += "<td>"+b.network_out+"</td>";
-                d += "<td>"+b.last_check+"</td></tr>";
+                //d += "<td>"+b.last_check+"</td></tr>";
+                var check = b.last_check;
+                var year = Number(check.slice(0,4));
+                var month = Number(check.slice(5,7))-1;
+                var day = Number(check.slice(8,10));
+                var hour = Number(check.slice(11,13))+9;
+                var min = Number(check.slice(14,16));
+                var sec = Number(check.slice(17,19));
+                var time = new Date(year,month,day,hour,min,sec);
+                d+="<td>"+time.toString()+"</td>";
                 content += d;
             }
 
