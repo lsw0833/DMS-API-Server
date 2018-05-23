@@ -17,7 +17,7 @@ def shutdown_session(exception=None):
 
 @app.route('/admin/brokers', methods=['GET'])
 def get_broker_list_for_admin():
-    brokers = Broker.query.order_by(Broker.port).all()
+    brokers = Broker.query.order_by(Broker.created).all()
     cpu = Setting.query.filter_by(id='cpu').first()
     result = []
     result.append(cpu.value) 

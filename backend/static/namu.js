@@ -14,12 +14,12 @@ function load_brokers() {
             "<td>Network In(bytes/s)</td><td>Network Out(bytes/s)</td><td>Last Check</td></tr>";
 
             var brokers = data['brokers'];
-	    var cpu = brokers[0];
+	        var cpu = brokers[0];
             for(var k = 1 ; k < brokers.length; k++) {
                 var b = brokers[k];
                 var d;
                 if(Number(b.cpu) >= Number(cpu)){
-                    d = "<tr bgcolor='red'>";
+                    d = "<tr bgcolor='#FF6666'>";
                 }else if(Number(b.cpu) < Number(cpu) && Number(b.cpu) >= Number(cpu)*0.8){
                     d = "<tr bgcolor='yellow'>";
                 }
@@ -73,8 +73,8 @@ function load_client() {
                 content += d;
             }
 
-            $("#client_list").html(content)
-            $("#client_count").html("클라이언트 목록 ("+clients.length+")")
+            $("#client_list").html(content);
+            $("#client_count").html("클라이언트 목록 ("+clients.length+")");
         }
     });
 }
